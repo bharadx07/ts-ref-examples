@@ -1,0 +1,16 @@
+{
+  "name": "ts-ref-examples",
+  "version": "1.0.0",
+  "description": "Examples of different typescript features. A good resource for learning the language.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx tsc -w",
+    "dev": "nodemon dist/index.js"
+  },
+  "author": "Bharadwaj Duggaraju",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "typescript": "^4.3.2"
+  }
+}
