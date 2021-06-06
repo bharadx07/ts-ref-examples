@@ -6,3 +6,4 @@
 
 //Handbook Examples - Import and Run the File
 import "./handbook-examples/basics"
+import "./handbook-examples/everydaytypes"

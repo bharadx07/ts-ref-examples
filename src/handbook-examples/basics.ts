@@ -39,3 +39,30 @@ const staticObject: staticTypeInterface = {
     foo: "bar"
 } //We get sweet autocomplete for creating the variable and now we get checking for accessing properties:
 
+const objectproperty = staticObject.anumber //Autocomplete and checking
+/* staticObject.anonexistantthing */ //Error, doesnt exist
+
+const announcement = "Hello World!";
+
+//Typo Catches, will show an error
+// announcement.toLocaleLowercase();
+// announcement.toLocalLowerCase();
+
+// We want this instead:
+announcement.toLocaleLowerCase();
+
+//Typechecking for multi params. Lets say we have a function like this:
+function greet(person: string, day: string) {
+    console.log(`Hello ${person}, today is ${day}!`);
+}
+
+//Now we get some sweet typechecking for multi params:
+greet("Bharadwaj", "Monday") //Success -> Hello Bharadwaj, today is Monday!
+/* fn("Bharadwaj") */ //Fail, 1 param instead of two
+
+//Implicit Types
+
+//Somtimes TS will assume a type of a variable if it is clear
+const explcit = "Hello World" //Knows its tring
+//But we can set this on our own
+const implicit: string = "Hello World"
