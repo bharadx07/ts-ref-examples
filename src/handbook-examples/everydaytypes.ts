@@ -40,7 +40,7 @@ const notRequired: {a: string, b?:string} = {
 
 //Union types
 let canBeNumberAndString: number | string = "Start String"
-canBeNumberAndString = 1 //Can also be a number
+canBeNumberAndString = 1 //Can also be a number.
 
 //Custom Types
 type FavColors = "Blue" | "Green"
