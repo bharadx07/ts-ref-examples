@@ -71,9 +71,9 @@ type UnlockedAccount = CreateMutable<LockedAccount>; //Now we get the same Locke
 //A simple version, generate a type using a template string.
 type World = "world";
 type Greeting = `hello ${World}`;
-const useTheGeneratedType: Greeting = "hello world" //Only string allowed;
+const useTheGeneratedType: Greeting = "hello world" //Only string allowed.
 //Complex usage. Generate a variety of different strings that can be used.
 type EmailLocaleIDs = "welcome_email" | "email_heading";
 type FooterLocaleIDs = "footer_title" | "footer_sendoff";
-type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`; //Any Email or Footer followed by _id;
+type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`; //Any Email or Footer followed by _id.
 const complexExample: AllLocaleIDs = "email_heading_id"; //Can use any of the four follwed by _id.
