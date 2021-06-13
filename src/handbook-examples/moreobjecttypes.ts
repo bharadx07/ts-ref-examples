@@ -56,3 +56,44 @@ type OneOrManyOrNullStrings = OneOrManyOrNull<string>;
 
 
 //The ARRAY type.
+//One of the most common generic types that will ever be used is the Array type.
+//Whenever we use 'number[]' it is a shortcut for 'Array<number>' like shown:
+const returnFirstString = (arr: Array<string>) => arr[1] ?? null
+const inputs: string[] = ["Bob"];
+returnFirstString(inputs); //Works. string[] and Array<string> are the same
+
+//The ReadonlyArray type.
+//A special type of array that cannot be changed
+const colors: ReadonlyArray<string> = ["red", "green", "blue"];
+/*We can read*/ console.log(colors.length);
+/*Cant edit, error: colors.push("yellow") */
+
+//Tuples.
+//An array type that knows the exact length and types and exact positions.
+type StringNumberPairing = [string, number]; //Length 2, [0] -> string, [1] -> number.
+//With this we can get some very strict and nice autocomplete.
+function useAPair(pair: StringNumberPairing) {
+    const [isAString, isANumber] = pair; //We know the types now.
+    console.log(isAString[0]);
+    console.log(isANumber.toString())
+}
+useAPair(["B", 0]);
+
+//Optional Tuple Params.
+type OptionalParam = [string, number, string?];
+const optionalParamUsage: OptionalParam = ["astring", 1];
+//A similar things applies to rest elements
+type restElm = [...boolean[]];
+
+//Readonly Tuples
+const takeAReadonlyTuple = (readonlyt: readonly [string, string]) => {
+    console.log(readonlyt[0].toString());
+    //readonlyt[0] = 1, fail it is readonly.
+}
+
+//Readonly edge case.
+let point = [3, 4] as const;
+function distanceFromOrigin([x, y]: [number, number]) {
+  return Math.sqrt(x ** 2 + y ** 2);
+}
+// distanceFromOrigin(point), error: will be taken as a readonly so will not work.
