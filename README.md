@@ -1,3 +1,3 @@
 # Typescript Ref Examples
 
-Examples of lots of typescripts features.
+Look through the folders to find examples of a plethora of Typescript's features.
